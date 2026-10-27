@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "app": "kiln",
+  "exportedAt": "2026-01-15T12:00:00.000Z",
+  "settings": {
+    "unit": "lb",
+    "weightIncrement": 5,
+    "defaultRestSeconds": 90
+  },
+  "days": [
+    {
+      "id": "day_example_a",
+      "name": "Day A",
+      "cardioNote": "Easy 10 minutes",
+      "exercises": [
+        {
+          "id": "ex_example_press",
+          "name": "Example Press",
+          "targetSets": 3,
+          "repMin": 6,
+          "repMax": 10,
+          "note": "Pause at the bottom",
+          "superset": "A",
+          "baseWeightLb": null,
+          "bodyweight": false
+        },
+        {
+          "id": "ex_example_row",
+          "name": "Example Row",
+          "targetSets": 3,
+          "repMin": 8,
+          "repMax": 12,
+          "note": "",
+          "superset": "A",
+          "baseWeightLb": 120,
+          "bodyweight": false
+        },
+        {
+          "id": "ex_example_raise",
+          "name": "Example Raise",
+          "targetSets": 2,
+          "repMin": 10,
+          "repMax": 15,
+          "note": "",
+          "superset": "",
+          "baseWeightLb": null,
+          "bodyweight": true
+        }
+      ]
+    },
+    {
+      "id": "day_example_rest",
+      "name": "Rest",
+      "cardioNote": "Walk",
+      "exercises": []
+    }
+  ],
+  "sessions": [
+    {
+      "id": "ses_example_1",
+      "date": "2026-01-14",
+      "dayId": "day_example_a",
+      "dayName": "Day A",
+      "createdAt": "2026-01-14T15:00:00.000Z",
+      "entries": [
+        {
+          "id": "ent_example_1",
+          "exerciseId": "ex_example_press",
+          "exerciseName": "Example Press",
+          "setType": "warmup",
+          "reps": 10,
+          "loadLb": 45,
+          "bodyweight": false,
+          "note": "",
+          "loggedAt": "2026-01-14T15:01:00.000Z"
+        },
+        {
+          "id": "ent_example_2",
+          "exerciseId": "ex_example_press",
+          "exerciseName": "Example Press",
+          "setType": "working",
+          "reps": 10,
+          "loadLb": 100,
+          "bodyweight": false,
+          "note": "smooth",
+          "loggedAt": "2026-01-14T15:05:00.000Z"
+        },
+        {
+          "id": "ent_example_3",
+          "exerciseId": "ex_example_press",
+          "exerciseName": "Example Press",
+          "setType": "working",
+          "reps": 10,
+          "loadLb": 100,
+          "bodyweight": false,
+          "note": "",
+          "loggedAt": "2026-01-14T15:08:00.000Z"
+        },
+        {
+          "id": "ent_example_4",
+          "exerciseId": "ex_example_press",
+          "exerciseName": "Example Press",
+          "setType": "working",
+          "reps": 10,
+          "loadLb": 100,
+          "bodyweight": false,
+          "note": "",
+          "loggedAt": "2026-01-14T15:11:00.000Z"
+        }
+      ]
+    }
+  ]
+}
