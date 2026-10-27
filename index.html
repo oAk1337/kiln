@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#141210" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Kiln is a personal workout tracker. Your log stays on this device." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Kiln" />
+  <title>Kiln</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <a class="brand" href="#/today">
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="currentColor" d="M17 2c.6 3.4-.4 5.6-2.2 7.2 3.2-.2 6.4 2 7 5.2.5 2.8-.6 5.4-2.8 6.8 2.4.2 4.6 2.2 5 4.6.6 3-1.4 5.8-4.6 6.4-4 .8-8.2-1-9.8-4.2-.2 2.6-2.4 5-5.4 5.2-2.4.2-4.6-1.2-5.6-3.2 2 .2 3.6-.8 4.4-2.2.8-1.6.8-3.4 0-5-1.8.8-4 .4-5.2-1.4C1.6 19.6.4 17.2.8 14.6c.4-2.6 2.4-4.4 4.8-4.8 1.2.2 2 .8 2.6 1.8C10.4 8.6 13 5.6 17 2z"/>
+        </svg>
+        <span>Kiln</span>
+      </a>
+      <button id="timer-btn" class="timer-btn" type="button" data-action="toggle-sheet" aria-live="polite">
+        <span id="timer-label">Rest 1:30</span>
+      </button>
+    </header>
+    <main id="view">
+      <p class="boot">Loading…</p>
+    </main>
+    <div id="sheet" class="sheet" hidden>
+      <p class="kicker">Rest timer</p>
+      <p id="timer-readout" class="timer-readout">1:30</p>
+      <div class="sheet-row">
+        <button type="button" data-action="timer-delta" data-delta="-15">−15s</button>
+        <button type="button" data-action="timer-delta" data-delta="15">+15s</button>
+      </div>
+      <div class="sheet-row">
+        <button type="button" id="timer-toggle" data-action="timer-toggle">Start</button>
+        <button type="button" data-action="timer-reset">Reset</button>
+      </div>
+      <button type="button" class="btn ghost wide" data-action="toggle-sheet">Close</button>
+    </div>
+    <nav class="tabbar" aria-label="Primary">
+      <a href="#/today" id="nav-today" data-tab="today">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path d="M12 3v2.2M12 18.8V21M3 12h2.2M18.8 12H21M5.6 5.6l1.6 1.6M16.8 16.8l1.6 1.6M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <span>Today</span>
+      </a>
+      <a href="#/program" id="nav-program" data-tab="program">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span>Program</span>
+      </a>
+      <a href="#/history" id="nav-history" data-tab="history">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16l4.2-4.2 3 3L20 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>History</span>
+      </a>
+      <a href="#/settings" id="nav-settings" data-tab="settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="8" r="2.1" fill="currentColor"/><circle cx="15" cy="16" r="2.1" fill="currentColor"/></svg>
+        <span>Settings</span>
+      </a>
+    </nav>
+    <div id="toast" class="toast" hidden role="status"></div>
+    <div id="modal-root"></div>
+    <input id="file-json" type="file" accept="application/json,.json" hidden />
+    <input id="file-csv" type="file" accept=".csv,text/csv,text/plain" hidden />
+  </div>
+  <noscript><p class="boot">Kiln needs JavaScript. Your data still stays on this device.</p></noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
